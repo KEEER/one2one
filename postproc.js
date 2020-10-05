@@ -1,0 +1,6 @@
+const all = require('./junior.json')
+const { readFileSync } = require('fs')
+const map = readFileSync('match/match_junior.out').toString().split('\n').slice(1).filter(Boolean).map(x => x.split(' ')).map(([junior, senior]) => ({ junior, senior }))
+const peopleData = all.flatMap(x => [x.younger, x.elder]).filter(Boolean)
+const people = map.flatMap(x => [x.junior, x.senior]).filter(Boolean).map(x => peopleData.find(p => p.id === x)).map(x => (x.type = x.type ? 'senior' : 'junior', x))
+console.log(JSON.stringify({ map, people }, null, 2))

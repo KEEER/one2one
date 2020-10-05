@@ -1,0 +1,14 @@
+__pycache__/
+
+.vscode/
+
+.clang-format
+
+input/
+output/
+*.json
+*.csv
+*.xls
+*.xlsx
+*.in
+*.out
