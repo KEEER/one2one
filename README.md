@@ -12,7 +12,7 @@
 
     导出第一步收集到的数据，预处理、打分然后进行匹配。
 
-<image src="./process.png"/>    
+![process的流程图](images/process.png)
 
     1. PREPROCESS: 从 Vote 导出的 .csv 文件中输入，对一些不合法数据（如同一个人填写了两份问卷）、冗余信息进行处理，然后将每个小朋友大朋友的姓名与手机号 hash 生成 uid 作为 key，根据年级进行分类，重新组织成规范的 .csv 文件。
 
@@ -40,7 +40,7 @@ KEEER Vote 是一个通用的收集数据的平台。KEEER Vote 的手机号验�
 
 preprocess.py 即 PREPROCESS 过程。
 
-<image src="./project.png"/>
+![项目的 UML 类图](images/project.png)
 
 SCORE 过程核心的数据模型是 Form 接口及其代表表单数据的派生类（如上图右侧），和 Question 接口及其代表问题数据的派生类（如上图左侧），均在 form/*.py 中定义。 
 
